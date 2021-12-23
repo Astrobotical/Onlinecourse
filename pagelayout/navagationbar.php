@@ -4,8 +4,8 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="Collector.php">Collector</a></li>
-                    <li class="nav-item"><a class="nav-link" href="service-page.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service-page.php">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.php">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.php">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="Shopping-cart.php">Shopping Cart</a></li>
                     <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
