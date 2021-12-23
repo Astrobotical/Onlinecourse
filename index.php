@@ -13,7 +13,9 @@
 </head>
 
 <body>
-<?php include('pagelayout/navagationbar.php');?>
+<?php 
+include 'pagelayout/navagationbar.php';
+?>
     <main class="page landing-page">
         <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg?h=0adc0de9a17a7caea6b8641f5d6ae02c&quot;);color:rgba(9, 162, 255, 0.85);">
             <div class="text">
