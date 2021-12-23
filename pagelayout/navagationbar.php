@@ -3,6 +3,7 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Collector.php">Collector</a></li>
                     <li class="nav-item"><a class="nav-link" href="service-page.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.php">FAQ</a></li>
@@ -13,4 +14,3 @@
                 </ul>
             </div>
         </div>
-    </nav>
