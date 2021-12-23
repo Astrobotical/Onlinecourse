@@ -7,7 +7,7 @@
                     <li class="nav-item"><a class="nav-link" href="service-page.php">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.php">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.php">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Shopping-cart.php">Shopping Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shopping-cart.php">Shopping Cart</a></li>
                     <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="registration.php">Register</a></li>
