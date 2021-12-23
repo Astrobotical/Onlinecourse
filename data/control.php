@@ -25,5 +25,18 @@ private $Password = "ma1GMyxems";
         if(!empty($resultset))
             return $resultset;
     }
+    function Mailer($to)
+    {
+    ini_set( 'display_errors', 1 );
+     error_reporting( E_ALL );
+     $from = "noreply@wotr.romarioburke.com";
+     $subject = "Welcome, sign up was sucesful";
+     $message = "Registration was a success";
+     $headers = "From:" . $from;
+     if(mail($to,$subject,$message, $headers)) {
+         echo "The email message was sent.";
+        } else{   echo "The email message was not sent.";
+        }
+    }
 }
 ?>

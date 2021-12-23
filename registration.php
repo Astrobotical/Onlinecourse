@@ -8,8 +8,10 @@ $Object = new GOBEYOND();
      $Datetime = date("Y-m-d H:i:s");
      $Query = "INSERT INTO users(name,email,password,last_login) VALUES ('$name','$email', '$password', '$Datetime')";
      $Queryresult = $Object->Query($Query);
+     $Mailer = $Object->Mailer($email);
      if($Queryresult){
          echo  "Successfully Registered";
+         $Mailer;
          header('Location: faq.html');
      }else{
          echo "Error";
