@@ -1,8 +1,8 @@
 <section class="clean-block about-us">
-            <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info">About Us</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+    <div class="container">
+        <div class="block-heading">
+            <h2 class="text-info">About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-6 col-lg-4">
@@ -12,8 +12,8 @@
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
                             </div>
-                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+             </div>
+         </div>
+    </div>
+</section>

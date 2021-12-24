@@ -1,21 +1,30 @@
 <?php
 include('data/control.php');
 $Object = new GOBEYOND();
- if (isset($_REQUEST['submit'])){
-     $name = $_POST['name'];
-     $email = $_POST['email'];
-     $password = $_POST['password'];
-     $Datetime = date("Y-m-d H:i:s");
-     $Query = "INSERT INTO users(name,email,password,last_login) VALUES ('$name','$email', '$password', '$Datetime')";
+ if (isset($_POST['submit'])){
+     $Firstname=$Lastname=$Email=$Gender=$Age=$password=$Datetime=$FirstnameError=$LastnameError=$EmailError=$GenderError=$AgeError=$passwordError=null;
+     $FirstnameError = "Check";
+     if(empty ($_POST['First'])){$FirstnameError = " The First name is required";}else{$Firstname = $_POST['First'];};
+     if(isset($_POST['Last'])){$Lastname = $_POST['Last'];}else{$LastnameError ="The Last name  is required";}
+     if(isset($_POST['email'])){$Email = $_POST['email'];}else{$EmailError =" The email is required";}
+     if(isset($_POST['age'])){$Email = $_POST['email'];}else{$EmailError =" The email is required";}
+     if(isset($_POST['password'])){$password = $_POST['password'];}else{$passwordError =" The password is required";}
+     $Accountcreation = date("Y-m-d H:i:s");
+     $Currentday = date("Y-m-d H:i:s");
+     $Gender = filter_input(INPUT_POST, 'Gender', FILTER_SANITIZE_STRING);
+     $Age = filter_input(INPUT_POST, 'Age', FILTER_SANITIZE_STRING);
+    if(!empty($Firstname || $Lastname || $Email || $Age || $password)){
+     $Query = "INSERT INTO subscribers(first_name,Last_name,age,email,accountcreation,last_login,gender,password) VALUES ('$Firstname','$Lastname', '$Age','$Email','$Accountcreation','$Currentday','$Gender','$password')";
      $Queryresult = $Object->Query($Query);
-     $Mailer = $Object->Mailer($email);
+     //$Mailer = $Object->Mailer($Email);
      if($Queryresult){
          echo  "Successfully Registered";
-         $Mailer;
-         header('Location: faq.php');
-     }else{
+         //$Mailer;
+         //header('Location: faq.php');
+
+     }}else{
          echo "Error";
-     }
+     } 
  }
 ?>
 <!DOCTYPE html>
@@ -40,10 +49,26 @@ $Object = new GOBEYOND();
                     <h2 class="text-info">Registration</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
                 </div>
-                <form action='registration.php' method='POST'>
-                    <div class="mb-3"><label class="form-label" for="name">Name</label><input class="form-control item" type="text" name="name"id="name"></div>
+                <form  class="row g-3 needs-validation" novalidate action='registration.php' method='POST'>
+                    <div class="mb-3"><label class="form-label" for="First">Name</label><input class="form-control item" type="text" name="First"id="Firt"><div class="invalid-feedback"><?php echo $FirstnameError;?></div></div>
+                    <div class="mb-3"><label class="form-label" for="Last">Last</label><input class="form-control item" type="text" name="Last"id="Last"><div class="invalid-feedback"><?php echo $FirstnameError;?></div></div>
+                    <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control item" type="email" name="email" id="email"><div class="invalid-feedback"><?php echo $FirstnameError;?></div></div>
+                    <div class="input-group mb-3"><div class="input-group-prepend"><label class="input-group-text" for="Gender">Gender</label> </div>
+                    <select class="custom-select" id="Gender" name="Gender">
+                    <option selected disabled value="">Choose</option>
+                    <option value="Male">Male </option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                    </select>
+                    </div>
+                    <div class="input-group mb-3"><div class="input-group-prepend"><label class="input-group-text" for="Age">Age</label> </div>
+                    <select class="custom-select" id="Gender" name="Age">
+                    <option selected disabled value="">Choose</option>
+                    <?php for($value = 13; $value <= 100; $value++){ 
+                        echo('<option value="' . $value . '">' . $value . '</option>');}
+                        ?></select><div class="invalid-feedback"></div></div>
                     <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control item" type="password" name="password"id="password"></div>
-                    <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control item" type="email" name="email" id="email"></div><button class="btn btn-primary" type="submit" name="submit">Sign Up</button>
+                    <button class="btn btn-primary" type="submit" name="submit">Register</button>
                 </form>
             </div>
         </section>
