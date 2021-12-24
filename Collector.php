@@ -1,6 +1,10 @@
 <?php
 include('data/control.php');
 $Object = new GOBEYOND();
+$targetDir = "assets/img/avatars/";
+$fileName = basename($_FILES["photo"]["name"]);
+$targetFilePath = $targetDir . $fileName;
+$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
  if (isset($_REQUEST['submit'])){
      $name = $_POST['name'];
      $email = $_POST['email'];
@@ -10,18 +14,37 @@ $Object = new GOBEYOND();
      $Facebook = $_POST['facebook'];
      $Twitter = $_POST['twitter'];
      $Instagram = $_POST['instagram'];
-     move_uploaded_file($_FILES["photo"]["tmp_name"],"assets/img/avatars".$_FILES["photo"]["name"]);
-     
-     $Query = "INSERT INTO users(name,email,password,accountcreation,photo,facebook,twitter,instagram) VALUES ('$name','$email', '$password', '$Datetime','$Photo,'$Facebook','$Twitter','$Instagram)";
+     $allowTypes = array('jpg','png','jpeg','gif','pdf');
+     if(in_array($fileType, $allowTypes)){
+         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+     $Query = "INSERT INTO users(name,email,password,accountcreation,photo,facebook,twitter,instagram) VALUES ('$name','$email', '$password', '$Datetime','$fileName','$Facebook','$Twitter','$Instagram)";
      $Queryresult = $Object->Query($Query);
      $Mailer = $Object->Mailer($email);
      if($Queryresult){
-         echo  "Successfully Registered";
+         echo  " const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Successfully Registered'
+          })
+         ";
          $Mailer;
      }else{
          echo "Error";
      }
+    }
  }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,6 +57,7 @@ $Object = new GOBEYOND();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css?h=2528b47b032341ce951bad4eb7bec58f">
+    <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 
 <body>
@@ -49,7 +73,7 @@ $Object = new GOBEYOND();
                 <div class="form-group">
     
 <div class="form-group">
-    <label for="Pincode">Upload New Photo  </label>
+    <label for="photo">Upload New Photo  </label>
     <input type="file" class="form-control" id="photo" name="photo" />
   </div>
                     <div class="mb-3"><label class="form-label" for="name">Name</label><input class="form-control item" type="text" name="name"id="name"></div>
@@ -66,6 +90,7 @@ $Object = new GOBEYOND();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/script.min.js?h=d28daa69ae332709e94e8243f638cce6"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
