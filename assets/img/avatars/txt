@@ -1,0 +1,1 @@
+INSERT INTO `Tutors`(`TID`, `Img`, `Name`, `Type`, `Description`) VALUES ('12','/assets/img/avatars/Red.png','Romario Burke','Food','Spreading the good news on how to cook medium rare chicken breasts')
