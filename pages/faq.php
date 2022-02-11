@@ -1,15 +1,25 @@
+<?php include('../data/globalsession.php');?>
 <!DOCTYPE html>
 <html>
 
 <head>
+    <style>
+    .accordion{
+        cursor: pointer;
+        background:#C7F7F6;
+    }
+        .active, .accordion:hover{
+            
+        }
+        
+    .answer{
+        display:none;
+    }
+        
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>FAQ - Brand</title>
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=4faeaacec36a5fa3686b42fd38ea3ce0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.min.css?h=2528b47b032341ce951bad4eb7bec58f">
+<?php include('../pagelayout/css.php');?>
 </head>
 
 <body>
@@ -18,37 +28,47 @@
         <section class="clean-block clean-faq dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">FAQ</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    <h2 class="text-info">Frequently Asked Questions (FAQ)</h2>
+                   <i> <p>You ask the QUESTIONS we give the ANSWERS.</p></i>
                 </div>
                 <div class="block-content">
-                    <div class="faq-item">
-                        <h4 class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                        <div class="answer">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                       <button class="accordion" <h5>How do I subscribe to a course?</h5></button>
+                        <div class="answer" >
+                            <p>A user may subscribe by clicking the subscribe button on the courses page.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <h4 class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                        <div class="answer">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    <div class="block-content">
+                     <button class="accordion" <h5>How can I get addtional information about each course?</h5></button>
+                        <div class="answer" >
+                            <p>The user may get additional information by clicking on the course icon and it will redicrect you to the course's information page.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <h4 class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                        <div class="answer">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <div class="block-content">
+                     <button class="accordion" <h5>Can I use a debit or credit card to pay for my courses?</h5></button>
+                        <div class="answer" >
+                            <p>Yes, you can pay with either a debit or credit card.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
     </main>
-    <?php include('../pagelayout/footer.php');?>
+                   
+       <?php include('../pagelayout/footer.php');?>
+                       <script>
+                        var coll = document.getElementsByClassName("accordion");
+                        var c;
+                        
+                        for (c = 0; c < coll.length; c++) {
+                          coll[c].addEventListener("click", function() {
+                            this.classList.toggle("active");
+                            var answer = this.nextElementSibling;
+                            if (answer.style.display === "block") {
+                              answer.style.display = "none";
+                            } else {
+                              answer.style.display = "block";
+                            }
+                          });
+                        }
+                          </script>
+</body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="/assets/js/script.min.js?h=d28daa69ae332709e94e8243f638cce6"></script>
-</body>
-
 </html>

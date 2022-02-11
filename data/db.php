@@ -1,8 +1,8 @@
 <?php
-$servername = "sql5.freesqldatabase.com";
-$username = "sql5460664";
-$password = "ma1GMyxems";
-$database = "sql5460664";
+$servername = "localhost";
+$username = "u695548073_Burke";
+$password = "?Py6[UFpNxn";
+$database = "u695548073_Web3";
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 

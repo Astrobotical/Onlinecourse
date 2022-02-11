@@ -41,22 +41,28 @@ $target_file = $target_dir . basename($_FILES["photo"]["name"]);
         <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Gimme dat information</h2>
-                    <p>Here</p>
+                    <h2 class="text-info">Register a New Course</h2>
                 </div>
                 <form action='Collector.php' method='POST'>
                 <div class="form-group">
     
 <div class="form-group">
-    <label for="photo">Upload New Photo  </label>
-    <input type="file" class="form-control" id="photo" name="photo" />
   </div>
-                    <div class="mb-3"><label class="form-label" for="name">Name</label><input class="form-control item" type="text" name="name"id="name"></div>
+                    <div class="mb-3"><label class="form-label" for="name">Name  of Course:</label><input class="form-control item" type="text" name="name"id="name"></div>
                     <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control item" type="password" name="password"id="password"></div>
-                    <div class="mb-3"><label class="form-label" for="facebook">Facebook page Link</label><input class="form-control item" type="text" name="facebook"id="facebook"></div>
-                    <div class="mb-3"><label class="form-label" for="instagram">instagram page  link</label><input class="form-control item" type="text" name="instagram"id="instagram"></div>
-                    <div class="mb-3"><label class="form-label" for="twitterk">Twitter page Link</label><input class="form-control item" type="text" name="twitter"id="twitter"></div>
-                    <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control item" type="email" name="email" id="email"></div><button class="btn btn-primary" type="submit" name="submit">Sign Up</button>
+                    <div class="mb-3"><label class="form-label" for="Img">Image Link</label><input class="form-control item" type="text" name="Img"id="Img"></div>
+                    <div class="mb"><label class="form-label" for="price">Course Price</label><input  class="form-control item" type="number" id="price" name="price" value="0"></div>
+                    <div class="mb-3"><label class="form-label" for="duration">Duration</label><input class="form-control item" type="number" name="duration"id="duration" placeholder="How many hours"></div>
+                    <div class="mb-3"><label class="form-label" for="credits">Credits</label><input class="form-control item" type="number" name="credits"id="credits"></div>
+                                        <div class="input-group mb-3"><div class="input-group-prepend"><label class="input-group-text" for="Coursetype">Course Type</label> </div>
+                    <select class="custom-select" id="Coursetype" name="Coursetype">
+                    <option selected disabled value="">Choose</option>
+                    <option value="Food">Food </option>
+                    <option value="Math">Math</option>
+                    <option value="Programming">Programming</option>
+                    </select>
+                    </div>
+                    <div class="mb-3"><label class="form-label" for="Lecturer">Lecturer</label><input class="form-control item" type="text" name="Lecturer" id="Lecturer" value="<?php echo $_SESSION['Name'];?>"disabled></div><button class="btn btn-primary" type="submit" name="submit">Add course</button>
                 </form>
             </div>
         </section>

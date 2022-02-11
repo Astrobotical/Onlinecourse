@@ -21,6 +21,7 @@
                         <div class="icons"><a href="https://www.facebook.com/WilliamsOnlineTeachingResources"><i class="icon-social-facebook"> Facebook</i></a><br>
                         <a href="https://www.instagram.com/williamsonlineteachingresource/"><i class="icon-social-instagram"></i> Instagram</a><br>
                         <a href="https://twitter.com/WillamWOTR"><i class="icon-social-twitter"> Twitter</i></a></div>
+                            
                     </ul>
                 </div>
             </div>

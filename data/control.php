@@ -38,7 +38,7 @@ private $Password = "?Py6[UFpNxn";
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
         $mail->Username = 'noreply@wotr.romarioburke.com';
-        $mail->Password = 'Katarina1';
+        $mail->Password = 'Katarina1941';
         $mail->SMTPAuth = true;
         $Name = ".$Firstname.  .$Lastname.";
         $mail->setFrom('noreply@wotr.romarioburke.com', "William Online Teaching Resources");
@@ -70,12 +70,10 @@ EOT;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
         $mail->Username = 'noreply@wotr.romarioburke.com';                   
-        $mail->Password = 'Katarina1';  
+        $mail->Password = 'Katarina1941';  
         $mail->SMTPAuth = true; 
         $mail->setFrom('noreply@wotr.romarioburke.com', 'WOTR Contact Form');
         $mail->addAddress('romarioburke190@gmail.com', 'Romario Burke');
-        $mail ->addAddress('ruthannbrown2014@gmail.com', 'Ruth Ann Daley');
-        $mail ->addAddress('lawrencekesha15@gmail.com', 'Serena Walcott');
         $mail->Subject = "New Submission";
         $mail->isHTML(true);
         $mail->Body = <<<EOT
@@ -101,6 +99,20 @@ EOT;
             echo "<script> alertify.alert('The Form was submitted');</script>";
             
         }
+    }
+    function Coursepurchased($Transaction,$Userid,$item,$courseid,$cost,$date){
+             $Query = "INSERT INTO Orders(transaction_id,customers_id,items,Courseid,total,date_purchased) VALUES ('$Transaction','$Userid', '$item','$courseid','$cost','$date')";
+              $Queryresult = mysqli_query($this->Connection, $Query);
+                  if($Queryresult){
+                  }else{
+                  }
+    }
+    function addcourse($courseid,$coursename,$Img,$price,$duration,$credits,$lecturer,$c_type){
+        $Query ="INSERT INTO courses(courseid,coursename,Img,price,duration,credits,lecturer,c_type)VALUES('$courseid','$coursename','$Img','$price','$duration','$credits','$lecturer','$c_type')";
+        $Queryresult = mysqli_query($this->Connection, $Query);
+                  if($Queryresult){
+                  }else{
+                  }
     }
 }
 ?>
